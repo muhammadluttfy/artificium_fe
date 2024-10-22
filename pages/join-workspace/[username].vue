@@ -68,13 +68,14 @@ async function onSubmit () {
         </div>
         <UForm :schema="schema" :state="state" @submit="onSubmit">
           <div class="grid grid-cols-12 space-y-16">
-            <div class="col-span-12 flex flex-col lg:flex-row lg:items-center lg:gap-6 w-8/12 mx-auto">
-              <div class="w-full text-center">
+            <div class="col-span-12 flex flex-col lg:flex-row lg:items-center w-8/12 mx-auto">
+              <div class="w-full text-center mb-6 lg:mb-0">
                 <UButton
                   label="Change workspace"
                   variant="ghost"
                   color="gray"
                   class="!text-noble-black-400"
+                  @click="router.push('/join-workspace')"
                 />
               </div>
               <div class="w-full">
