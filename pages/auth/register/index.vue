@@ -75,8 +75,8 @@ type Schema = z.output<typeof schema>
 
 <template>
   <div class="flex flex-col lg:flex-row h-screen max-w-7xl mx-auto">
-    <UContainer class="w-full lg:w-7/12 h-screen flex flex-col justify-between py-12">
-      <div class="flex justify-between items-center">
+    <UContainer class="w-full lg:w-7/12 h-screen flex flex-col justify-between">
+      <div class="flex justify-between items-center pt-12">
         <NuxtImg src="logo.svg" class="w-8 h-8" />
         <button type="button" class="bg-gradient-to-r from-[#82DBF7] to-stem-green-500 text-transparent bg-clip-text font-semibold" @click="router.push('/auth/login')">
           Login
@@ -161,7 +161,7 @@ type Schema = z.output<typeof schema>
         </UForm>
       </div>
 
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between pb-12">
         <p class="text-noble-black-300">
           Artificium.app © {{ new Date().getFullYear() }}
         </p>

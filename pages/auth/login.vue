@@ -39,8 +39,8 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
 
 <template>
   <div class="flex flex-col lg:flex-row h-screen max-w-7xl mx-auto">
-    <UContainer class="w-full lg:w-1/2 h-screen flex flex-col justify-between py-12">
-      <div>
+    <UContainer class="w-full lg:w-1/2 h-screen flex flex-col justify-between">
+      <div class="pt-12">
         <NuxtImg src="logo.svg" width="48" height="48" />
       </div>
 
@@ -133,8 +133,8 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
         </UForm>
       </div>
 
-      <div>
-        <p class="text-base font-semibold text-noble-black-400">
+      <div class="pb-12">
+        <p class="text-base text-center lg:text-left font-semibold text-noble-black-400">
           Don't have an account?
           <button type="button" class="bg-gradient-to-r from-[#82DBF7] to-stem-green-500 text-transparent bg-clip-text cursor-pointer" @click="router.push('/auth/register')">
             Sign Up
