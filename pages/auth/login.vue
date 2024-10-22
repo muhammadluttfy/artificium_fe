@@ -4,17 +4,21 @@ import type { FormSubmitEvent } from '#ui/types'
 
 definePageMeta({
   colorMode: 'dark',
-  layout: 'empty'
+  layout: 'empty',
+  title: 'Login | Artificium - AI-Powered Content Creation Tool',
+  description: 'Artificium adalah aplikasi canggih yang memanfaatkan kecerdasan buatan untuk membantu menciptakan konten kreatif dengan mudah dan cepat.',
 })
 
 useSeoMeta({
-  title: 'Artificium - AI Content Creation App',
-  ogTitle: 'Artificium - AI-Powered Content Creation Tool',
+  title: 'Login | Artificium - AI-Powered Content Creation Tool',
+  ogTitle: 'Login | Artificium - AI-Powered Content Creation Tool',
   description: 'Artificium adalah aplikasi canggih yang memanfaatkan kecerdasan buatan untuk membantu menciptakan konten kreatif dengan mudah dan cepat.',
   ogDescription: 'Artificium adalah platform berbasis AI yang memudahkan proses pembuatan konten kreatif secara efisien dan berkualitas tinggi.',
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
 })
+
+const router = useRouter()
 
 const state = reactive({
   email: undefined,
@@ -22,8 +26,8 @@ const state = reactive({
 })
 
 const schema = z.object({
-  // email: z.string().email('Invalid email format').optional(),
-  // password: z.string().min(8, 'Must be at least 8 characters').optional()
+  email: z.string().email('Invalid email format'),
+  password: z.string().min(8, 'Must be at least 8 characters')
 })
 
 type Schema = z.output<typeof schema>
@@ -34,8 +38,8 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <div class="flex flex-col lg:flex-row h-screen max-w-7xl mx-auto my-auto">
-    <UContainer class="w-full lg:w-1/2 py-10">
+  <div class="flex flex-col lg:flex-row h-screen max-w-7xl mx-auto">
+    <UContainer class="w-full lg:w-1/2 h-screen flex flex-col justify-between py-12">
       <div>
         <NuxtImg src="logo.svg" width="48" height="48" />
       </div>
@@ -57,10 +61,10 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
             <UInput
               v-model="state.email"
               type="email"
+              icon="i-heroicons-envelope"
               size="md"
               placeholder="Email"
               autocomplete="off"
-              class="focus:outline-none focus:ring focus:ring-violet-300"
             />
           </UFormGroup>
 
@@ -68,6 +72,7 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
             <UInput
               v-model="state.password"
               type="password"
+              icon="i-heroicons-lock-closed"
               size="md"
               placeholder="Password"
             />
@@ -76,9 +81,9 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
           <div class="my-12">
             <div class="flex justify-between">
               <UCheckbox label="Remember me" />
-              <p class="bg-gradient-to-r from-[#82DBF7] to-stem-green-500 text-transparent bg-clip-text">
+              <button type="button" class="bg-gradient-to-r from-[#82DBF7] to-stem-green-500 text-transparent bg-clip-text font-semibold">
                 Forgot Password?
-              </p>
+              </button>
             </div>
           </div>
 
@@ -93,7 +98,7 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
           <UDivider label="or continue with" class="my-12" />
           <div class="grid grid-cols-12 gap-6">
             <div class="col-span-12 lg:col-span-6">
-              <UButton color="gray" class="w-full !bg-noble-black-600 py-3 px-4">
+              <UButton class="w-full !bg-noble-black-600 py-3 px-4">
                 <template #leading>
                   <div class="flex mx-auto space-x-4">
                     <NuxtImg
@@ -109,7 +114,7 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
               </UButton>
             </div>
             <div class="col-span-12 lg:col-span-6">
-              <UButton color="gray" class="w-full !bg-noble-black-600 py-3 px-4">
+              <UButton class="w-full !bg-noble-black-600 py-3 px-4">
                 <template #leading>
                   <div class="flex mx-auto space-x-4">
                     <NuxtImg
@@ -118,7 +123,7 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
                       height="20"
                     />
                     <p class="text-noble-black-400">
-                      Google Account
+                      Apple Account
                     </p>
                   </div>
                 </template>
@@ -131,9 +136,9 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
       <div>
         <p class="text-base font-semibold text-noble-black-400">
           Don't have an account?
-          <span class="bg-gradient-to-r from-[#82DBF7] to-stem-green-500 text-transparent bg-clip-text cursor-pointer">
+          <button type="button" class="bg-gradient-to-r from-[#82DBF7] to-stem-green-500 text-transparent bg-clip-text cursor-pointer" @click="router.push('/auth/register')">
             Sign Up
-          </span>
+          </button>
         </p>
       </div>
     </UContainer>
