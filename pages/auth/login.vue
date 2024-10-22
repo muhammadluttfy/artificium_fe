@@ -38,13 +38,13 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <div class="flex flex-col lg:flex-row h-screen max-w-7xl mx-auto">
+  <div class="flex flex-col lg:flex-row h-screen mx-auto">
     <UContainer class="w-full lg:w-1/2 h-screen flex flex-col justify-between">
       <div class="pt-12">
-        <NuxtImg src="logo.svg" width="48" height="48" />
+        <NuxtImg src="logo.svg" class="w-12 h-12" />
       </div>
 
-      <div class="px-4 lg:px-14 my-16">
+      <div class="px-4 lg:w-8/12 mx-auto my-16">
         <div class="mb-16">
           <h1 class="font-bold text-4xl mb-6">
             Let's get
@@ -142,8 +142,12 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
         </p>
       </div>
     </UContainer>
-    <div class="w-full lg:w-1/2 hidden lg:block">
-      <NuxtImg src="illustrations/bg-login-illustration.webp" class="w-full rounded-l-3xl" />
+    <div class="w-full lg:w-1/2 hidden lg:block h-screen relative overflow-hidden">
+      <NuxtImg 
+        src="illustrations/bg-login-illustration.webp" 
+        class="absolute inset-0 w-full h-full object-cover rounded-l-3xl"
+        alt="illustration"
+      />
     </div>
   </div> 
 </template>

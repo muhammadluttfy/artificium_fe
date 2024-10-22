@@ -46,7 +46,7 @@ const schema = z.object({
 
 type Schema = z.output<typeof schema>
 
-  async function onSubmit (event: FormSubmitEvent<Schema>) {
+async function onSubmit (event: FormSubmitEvent<Schema>) {
   try {
     console.log('event data :', event.data)
     isLoading.value = true
@@ -74,16 +74,16 @@ type Schema = z.output<typeof schema>
 </script>
 
 <template>
-  <div class="flex flex-col lg:flex-row h-screen max-w-7xl mx-auto">
+  <div class="flex flex-col lg:flex-row h-screen mx-auto">
     <UContainer class="w-full lg:w-7/12 h-screen flex flex-col justify-between">
       <div class="flex justify-between items-center pt-12">
-        <NuxtImg src="logo.svg" class="w-8 h-8" />
+        <NuxtImg src="logo.svg" class="w-12 h-12" />
         <button type="button" class="bg-gradient-to-r from-[#82DBF7] to-stem-green-500 text-transparent bg-clip-text font-semibold" @click="router.push('/auth/login')">
           Login
         </button>
       </div>
 
-      <div class="mx-4 lg:mx-10 my-16">
+      <div class="px-4 my-16 lg:w-8/12 !mx-auto">
         <h1 class="text-4xl font-normal leading-10 mb-16">
           Connect with your team and bring your creative ideas to life.
         </h1>
@@ -133,7 +133,7 @@ type Schema = z.output<typeof schema>
                 />
               </UFormGroup>
             </div>
-            <div class="col-span-12">
+            <div class="col-span-12 my-6">
               <UFormGroup name="termsAndConditions">
                 <UCheckbox v-model="state.termsAndConditions">
                   <template #label>
@@ -171,7 +171,7 @@ type Schema = z.output<typeof schema>
       </div>
     </UContainer>
     <div class="w-full lg:w-5/12 hidden lg:block">
-      <NuxtImg src="/illustrations/bg-register-1-illustration.webp" class="w-full h-full object-cover" />
+      <NuxtImg src="/illustrations/bg-register-1-illustration.webp" class="w-full h-full object-cover rounded-l-3xl" />
     </div>
   </div>
 </template>
