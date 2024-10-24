@@ -42,17 +42,17 @@ const toggleCollapse = () => {
       </div>
     </div>
     <UDivider class="pt-6" />
-    <div class="px-6 py-[30px] flex items-center gap-9">
-      <button type="button">
+    <div class="grid grid-flow-col auto-cols-max">
+      <button type="button" class="pt-[30px] px-6">
         <div class="flex items-center gap-3 pb-6">
           <IconsArtificium class="text-stem-green-500" />
           <p class="text-sm font-semibold text-noble-black-100">
             Artificium
           </p>
         </div>
-        <div class="h-1.5 -mb-6 bg-stem-green-500 rounded-t-lg" />
+        <div class="h-1.5 bg-stem-green-500 rounded-t-lg" />
       </button>
-      <button type="button">
+      <button type="button" class="py-[30px] px-6 ">
         <div class="flex items-center gap-3">
           <IconsChat class="text-noble-black-400" />
           <p class="text-sm font-semibold text-noble-black-300">
@@ -60,7 +60,7 @@ const toggleCollapse = () => {
           </p>
         </div>
       </button>
-      <button type="button">
+      <button type="button" class="py-[30px] px-6 ">
         <div class="flex items-center gap-3">
           <IconsFolder class="text-noble-black-400" />
           <p class="text-sm font-semibold text-noble-black-300">
