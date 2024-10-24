@@ -13,6 +13,7 @@ export default <Partial<Config>>{
     extend: {
       colors: {
         'noble-black': {
+          100: '#E8E9E9',
           200: '#CDCECF',
           300: '#9B9C9E',
           400: '#686B6E',

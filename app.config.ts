@@ -58,7 +58,7 @@ export default defineAppConfig({
 
     divider: {
       border: {
-        base: 'border-gray-200 dark:border-noble-black-500'
+        base: 'border-noble-black-500'
       }
     },
 

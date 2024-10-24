@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxt/ui',
     '@nuxtjs/google-fonts',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/device'
   ],
 
   googleFonts: {
