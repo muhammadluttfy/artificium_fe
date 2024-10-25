@@ -71,7 +71,7 @@ useSeoMeta({
         </button>
       </div>
     </div>
-    <div class="py-[100px] px-[52px]">
+    <div class="py-[100px] px-8 lg:px-[52px]">
       <div class="space-y-4 mb-16">
         <h1 class="text-white text-[28px] font-bold text-center">
           Innovation Starter Pack

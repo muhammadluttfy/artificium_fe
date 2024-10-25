@@ -25,6 +25,15 @@ const isSidebarCollapsed = useState<boolean>('is-collapsed')
       <div class="pt-4">
         <slot />
       </div>
+
+      <div 
+        class="sticky bottom-3 right-0 z-10 transition-all duration-300"
+        :class="[
+          isSidebarCollapsed ? 'lg:left-[80px]' : 'lg:left-[325px]'
+        ]"
+      >
+        <NavigationBarCommandPromp />
+      </div>
     </main>
   </div>
 </template>
