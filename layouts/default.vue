@@ -5,7 +5,7 @@ const isSidebarCollapsed = useState<boolean>('is-collapsed')
 <template>
   <div class="min-h-screen">
     <Sidebar
-      collapsed.sync="isSidebarCollapsed"
+      :collapsed.sync="isSidebarCollapsed"
     />
     <main 
       class="transition-all duration-300 min-h-screen m-3 rounded-[20px]"
@@ -13,9 +13,18 @@ const isSidebarCollapsed = useState<boolean>('is-collapsed')
         isSidebarCollapsed ? 'lg:ml-[92px]' : 'lg:ml-[337px]'
       ]"
     >
-    <NavigationBar
-    />
-      <slot />
+      <div 
+        class="sticky top-3 right-0 z-10 transition-all duration-300"
+        :class="[
+          isSidebarCollapsed ? 'lg:left-[80px]' : 'lg:left-[325px]'
+        ]"
+      >
+        <NavigationBar />
+      </div>
+      
+      <div class="pt-4">
+        <slot />
+      </div>
     </main>
   </div>
 </template>

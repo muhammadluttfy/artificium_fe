@@ -65,18 +65,6 @@ watch(isCollapsed, (newValue: boolean) => {
       ]"
     >
       <!-- Sidebar Header -->
-      <div class="flex items-center justify-between p-4 border-b border-noble-black-700">
-        <h1 class="text-white font-bold" :class="{ 'hidden': isCollapsed }">
-          Orbital Oddysey
-        </h1>
-        <button 
-          class="p-2 rounded-lg text-white hover:bg-noble-black-700"
-          :class="{ 'ml-1': toggleCollapse }"
-          @click="toggleCollapse"
-        >
-          <IconsHamberger class="text-white" />
-        </button>
-      </div>
       <div class="flex items-center justify-between p-6 border-b border-noble-black-700">
         <div class="flex items-center gap-4">
           <NuxtImg
@@ -103,7 +91,7 @@ watch(isCollapsed, (newValue: boolean) => {
         class="flex-1 overflow-y-auto"
       >
         <div class="space-y-2">
-          <div class="px-4 py-6 border-y border-noble-black-700">
+          <div class="space-y-2 px-4 py-6 border-b border-noble-black-700">
             <p
               class="uppercase font-semibold text-xs text-noble-black-400 mb-6"
               :class="{ 'hidden': isCollapsed }"
@@ -112,34 +100,40 @@ watch(isCollapsed, (newValue: boolean) => {
             </p>
             <button 
               type="button" 
-              class="flex w-full items-center text-noble-black-100 text-sm font-semibold hover:bg-noble-black-700 rounded-lg p-[14px] transition-colors"
-            >
+              class="flex w-full items-center text-noble-black-100 text-sm font-semibold border-t-2 border-l-2 border-transparent 
+                hover:border-t-2 hover:border-l-2 hover:border-noble-black-500 
+                hover:bg-gradient-to-br hover:from-noble-black-500 hover:to-noble-black-700 
+                rounded-lg px-[14px] py-2.5 transition-all"
+              >
               <div class="flex items-center">
               <UIcon
                 name="i-heroicons-magnifying-glass"
-                class="h-6 w-6"
+                class="h-6 w-6 -ml-1"
+                :class="{ '-ml-1': isCollapsed }"
                 />
                 <span class="ml-3" :class="{ 'hidden': isCollapsed }">
                 Search
                 </span>
               </div>
               <div
-                class="flex items-center ml-auto justify-center w-12 h-8 p-1.5 border border-noble-black-500 rounded-lg text-xs font-semibold bg-gradient-to-br from-noble-black-500 to-noble-black-700"
+                class="flex items-center ml-auto justify-center w-12 h-8 border border-noble-black-500 rounded-md text-xs font-semibold bg-gradient-to-br from-noble-black-500 to-noble-black-700"
                 :class="{ 'hidden': isCollapsed }"
               >
                 ⌘ S
               </div>
-
-
             </button>
             
             <button 
               type="button" 
-              class="flex w-full items-center text-noble-black-100 text-sm font-semibold hover:bg-noble-black-700 rounded-lg p-[14px] transition-colors"
-            >
+              class="flex w-full items-center text-noble-black-100 text-sm font-semibold border-t-2 border-l-2 border-transparent 
+                hover:border-t-2 hover:border-l-2 hover:border-noble-black-500 
+                hover:bg-gradient-to-br hover:from-noble-black-500 hover:to-noble-black-700 
+                rounded-lg p-[14px] transition-all"
+              >
               <UIcon
                 name="i-heroicons-credit-card"
                 class="h-6 w-6"
+                :class="{ '-ml-1': isCollapsed }"
               />
               <span class="ml-3" :class="{ 'hidden': isCollapsed }">
               Billing
@@ -147,31 +141,80 @@ watch(isCollapsed, (newValue: boolean) => {
             </button>
           </div>
 
-          <div class="p-4">
-  
+          <div class="space-y-2 p-4">
+            <p
+              class="uppercase font-semibold text-xs text-noble-black-400 mb-6"
+              :class="{ 'hidden': isCollapsed }"
+            >
+              Projects
+            </p>
+
             <button 
               type="button" 
-              class="flex w-full items-center text-noble-black-100 text-sm font-semibold hover:bg-noble-black-700 rounded-lg p-[14px] transition-colors"
-            >
-              <UIcon
-                name="i-heroicons-clipboard-document-list"
-                class="h-6 w-6"
-              />
+              class="flex w-full items-center text-noble-black-100 text-sm font-semibold 
+                border-t-2 border-l-2 border-noble-black-500 
+                bg-gradient-to-br from-noble-black-500 to-noble-black-700 
+                rounded-lg p-[14px] transition-all"
+              >
+              <IconsBox class="text-stem-green-500" />
               <span class="ml-3" :class="{ 'hidden': isCollapsed }">
-              Tasks
+                Orbital Oddysey
               </span>
             </button>
-  
+
             <button 
               type="button" 
-              class="flex w-full items-center text-noble-black-100 text-sm font-semibold hover:bg-noble-black-700 rounded-lg p-[14px] transition-colors"
-            >
-              <UIcon
-                name="i-heroicons-cog-6-tooth"
-                class="h-6 w-6"
-              />
+              class="flex w-full items-center text-noble-black-100 text-sm font-semibold 
+                border-t-2 border-l-2 border-transparent 
+                hover:border-t-2 hover:border-l-2 hover:border-noble-black-500 
+                hover:bg-gradient-to-br hover:from-noble-black-500 hover:to-noble-black-700 
+                rounded-lg p-[14px] transition-all"
+              >
+              <IconsTriangle class="text-red-power-600" />
               <span class="ml-3" :class="{ 'hidden': isCollapsed }">
-              Settings
+                Digital Product Launch
+              </span>
+            </button>
+
+            <button 
+              type="button" 
+              class="flex w-full items-center text-noble-black-100 text-sm font-semibold 
+                border-t-2 border-l-2 border-transparent 
+                hover:border-t-2 hover:border-l-2 hover:border-noble-black-500 
+                hover:bg-gradient-to-br hover:from-noble-black-500 hover:to-noble-black-700 
+                rounded-lg p-[14px] transition-all"
+              >
+              <IconsBox class="text-happy-orange-600" />
+              <span class="ml-3" :class="{ 'hidden': isCollapsed }">
+                Brand Refresh
+              </span>
+            </button>
+
+            <button 
+              type="button" 
+              class="flex w-full items-center text-noble-black-100 text-sm font-semibold 
+                border-t-2 border-l-2 border-transparent 
+                hover:border-t-2 hover:border-l-2 hover:border-noble-black-500 
+                hover:bg-gradient-to-br hover:from-noble-black-500 hover:to-noble-black-700 
+                rounded-lg p-[14px] transition-all"
+              >
+              <IconsHexagon class="text-heisenberg-blue-600" />
+              <span class="ml-3" :class="{ 'hidden': isCollapsed }">
+                Social Media Strategy
+              </span>
+            </button>
+
+            <button 
+              type="button" 
+              class="group flex w-full items-center text-noble-black-400 text-sm font-semibold 
+                border-t-2 border-l-2 border-transparent 
+                hover:border-t-2 hover:border-l-2 hover:text-noble-black-100 hover:border-noble-black-500 
+                hover:bg-gradient-to-br hover:from-noble-black-500 hover:to-noble-black-700 
+                rounded-lg p-[14px] transition-all"
+              >
+              <IconsPlus class="text-noble-black-500 group-hover:text-noble-black-100 transition-all" />
+              <span class="ml-3" :class="{ 'hidden': isCollapsed }">
+                Add new project
               </span>
             </button>
           </div>
